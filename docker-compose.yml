@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+  laravelapp:
+    build:
+      context: ./docker/bin/webserver
+    container_name: laravelapp
+    restart: always
+    ports:
+      - "8080:80"
+    links:
+      - laraveldb
+    volumes:
+      - .:/var/www/html
+      - ./docker/config/php/php.ini:/usr/local/etc/php/php.ini:cached
+      - ./docker/config/vhosts:/etc/apache2/sites-enabled:cached
+  laraveldb:
+    build: ./docker/bin/mysql
+    container_name: laraveldb
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: superpassword
+      MYSQL_DATABASE: lapp
+      MYSQL_USER: lappuser
+      MYSQL_PASSWORD: lapppass
