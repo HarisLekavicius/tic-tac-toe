@@ -14,6 +14,6 @@
 Route::resource('/', 'GameController');
 Route::resource('test_json', 'Api\TicTacToeController');
 Route::post('/request', 'GameController@store')->name('gameController');
-Route::post('/logs', 'GameController@logs');
-Route::post('/currentPlayer', 'GameController@currentPlayer');
-Route::post('/markers', 'GameController@markers');
+Route::post('/logs', 'GameLogsController@show');
+Route::post('/currentPlayer', 'CurrentPlayerController@store');
+Route::post('/markers', 'MarkersController@store');

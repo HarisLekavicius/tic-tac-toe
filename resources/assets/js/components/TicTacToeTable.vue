@@ -13,7 +13,6 @@
 </template>
 
 <script>
-  // import {markers} from 'vuex'
     export default {
       data(){
         return{
@@ -33,13 +32,11 @@
             // emit a new game log event everytime new data was retrieved
             Event.$emit('gameLog');
           });
-  
-          // Event.$emit('store', id);
         }
       },
       mounted(){
 
-         // if button was clicked redaclare markers array as empty
+        // if button was clicked redaclare markers array as empty
         Event.$on('boardCleared', () => {
           this.markers = new Array(10);
         });
@@ -51,22 +48,7 @@
           this.markers = response.data
         })
       }
-      // computed: {
-      //   getallMarkers(){
-      //     return this.$store.state.markers
-      //   }
-      // }
-      /*mounted(){
-        //game API data
-        axios.get('api/TicTacToe').then(response => {
-          var game = response.data
-          game.append('_token', csrf)
-          this.currentPlayer = game.currentPlayer
-          this.winner = game.winner
-        }).catch(error =>{
-          console.log(error)
-        })
-      }*/
+      
     }
 </script>
 

@@ -49387,7 +49387,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-// import {markers} from 'vuex'
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -49409,8 +49408,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         // emit a new game log event everytime new data was retrieved
         Event.$emit('gameLog');
       });
-
-      // Event.$emit('store', id);
     }
   },
   mounted: function mounted() {
@@ -49428,23 +49425,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       _this2.markers = response.data;
     });
   }
-  // computed: {
-  //   getallMarkers(){
-  //     return this.$store.state.markers
-  //   }
-  // }
-  /*mounted(){
-    //game API data
-    axios.get('api/TicTacToe').then(response => {
-      var game = response.data
-      game.append('_token', csrf)
-      this.currentPlayer = game.currentPlayer
-      this.winner = game.winner
-    }).catch(error =>{
-      console.log(error)
-    })
-  }*/
-
 });
 
 /***/ }),
